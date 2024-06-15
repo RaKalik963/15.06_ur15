@@ -41,6 +41,7 @@ int main()
     {
         cout << A[i] << " ";
     }
+    cout << endl;
     int* C = new int[M + N];
     unite_arrays(A, M, B, N, C);
 
@@ -48,7 +49,7 @@ int main()
     for (int i = 0; i < M + N; i++) {
         cout << C[i] << " ";
     }
-    cout << endl;
+
     cout << endl;
     return 0;
     system("pause");
