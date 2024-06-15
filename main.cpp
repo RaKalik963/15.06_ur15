@@ -35,6 +35,8 @@ int main()
 	}
 	cout << endl;
 	sum_product(arr, size, sum, product);
+	delete product;
+	delete sum;
 	return 0;
 	system("pause");
 }
