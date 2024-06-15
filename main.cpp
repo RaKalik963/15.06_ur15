@@ -1,13 +1,15 @@
 #include <iostream>
 #include <ctime>
+#include <cmath>
 using namespace std;
 
 
 void unite_arrays(int* A, int M, int* B, int N, int* C) {
+    int D = M + N;
     for (int i = 0; i < M; i++) {
         C[i] = A[i];
     }
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < D; i++) {
         C[M + i] = B[i];
     }
 }
@@ -33,7 +35,7 @@ int main()
     for (size_t i = 0; i < N; i++)
     {
         cout << "enter elements to add";
-        cin >> *B;
+        cin >> B[i];
     }
 
     cout << "Array ";
