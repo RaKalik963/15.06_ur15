@@ -51,8 +51,10 @@ int main()
     for (int i = 0; i < M + N; i++) {
         cout << C[i] << " ";
     }
-
     cout << endl;
+    delete A;
+    delete B;
+    delete C;
     return 0;
     system("pause");
 }
