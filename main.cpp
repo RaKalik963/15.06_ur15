@@ -33,23 +33,16 @@ void add_to_end(int* A, int M, int* B, int N, int* C) {
     }
 }
 
-int* insertElement(int* arr, int& size, int index, int element) {
-    if (index < 0 || index > size) {
-        cout << "Некоректний індекс для вставки!" << endl;
-        return arr;
+void paste_elements(int* A, int M, int* B, int N, int index, int* C) {
+    for (int i = 0; i < index; i++) {
+        C[i] = A[i];
     }
-
-    int* newArr = new int[size + 1];
-    for (int i = 0; i < index; ++i) {
-        newArr[i] = arr[i];
+    for (int i = 0; i < N; i++) {
+        C[index + i] = B[i];
     }
-    newArr[index] = element;
-    for (int i = index + 1; i <= size; ++i) {
-        newArr[i] = arr[i - 1];
+    for (int i = index; i < M; i++) {
+        C[N + i] = A[i];
     }
-    ++size;
-    delete[] arr;
-    return newArr;
 }
 
 int* removeElement(int* arr, int& size, int index) {
