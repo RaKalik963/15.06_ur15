@@ -24,15 +24,13 @@ void deleteArray(int* arr) {
     delete[] arr;
 }
 
-int* appendElement(int* arr, int& size, int element) {
-    int* newArr = new int[size + 1];
-    for (int i = 0; i < size; ++i) {
-        newArr[i] = arr[i];
+void add_to_end(int* A, int M, int* B, int N, int* C) {
+    for (int i = 0; i < M; i++) {
+        C[i] = A[i];
     }
-    newArr[size] = element;
-    ++size;
-    delete[] arr;
-    return newArr;
+    for (int i = 0; i < N; i++) {
+        C[M + i] = B[i];
+    }
 }
 
 int* insertElement(int* arr, int& size, int index, int element) {
