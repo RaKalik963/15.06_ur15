@@ -4,7 +4,7 @@
 using namespace std;
 
 
-void unite_arrays(int* A, int M, int* B, int N, int* C) {
+void add_to_end(int* A, int M, int* B, int N, int* C) {
     int D = M + N;
     for (int i = 0; i < M; i++) {
         C[i] = A[i];
@@ -43,9 +43,9 @@ int main()
     {
         cout << A[i] << " ";
     }
-    cout << endl;
+    cout << endl
     int* C = new int[M + N];
-    unite_arrays(A, M, B, N, C);
+    add_to_end(A, M, B, N, C);
 
     cout << "combined array ";
     for (int i = 0; i < M + N; i++) {
