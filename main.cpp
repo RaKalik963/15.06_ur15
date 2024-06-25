@@ -1,60 +1,55 @@
 #include <iostream>
 #include <ctime>
-#include <cmath>
 using namespace std;
 
-
 void add_to_end(int* A, int M, int* B, int N, int* C) {
-    int D = M + N;
     for (int i = 0; i < M; i++) {
         C[i] = A[i];
     }
-    for (int i = 0; i < D; i++) {
+    for (int i = 0; i < N; i++) {
         C[M + i] = B[i];
     }
 }
 
-int main()
-{
+int main() {
     srand(time(0));
 
     int M, N;
-    cout << "enter size of array A ";
+    cout << "Enter size of array A: ";
     cin >> M;
     int* A = new int[M];
 
-    for (size_t i = 0; i < M; i++)
-    {
+    for (int i = 0; i < M; i++) {
         A[i] = rand() % 10;
     }
 
-    cout << "enter size of array B ";
+    cout << "Enter size of array B: ";
     cin >> N;
     int* B = new int[N];
 
-    for (size_t i = 0; i < N; i++)
-    {
-        cout << "enter elements to add";
+    for (int i = 0; i < N; i++) {
+        cout << "Enter element to add: ";
         cin >> B[i];
     }
 
-    cout << "Array ";
-    for (size_t i = 0; i < N; i++)
-    {
+    cout << "Array A: ";
+    for (int i = 0; i < M; i++) {
         cout << A[i] << " ";
     }
-    cout << endl
+    cout << endl;
+
     int* C = new int[M + N];
     add_to_end(A, M, B, N, C);
 
-    cout << "combined array ";
+    cout << "Combined array: ";
     for (int i = 0; i < M + N; i++) {
         cout << C[i] << " ";
     }
     cout << endl;
-    delete A;
-    delete B;
-    delete C;
+
+    delete[] A;
+    delete[] B;
+    delete[] C;
+
     return 0;
-    system("pause");
 }
