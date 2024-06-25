@@ -45,22 +45,13 @@ void paste_elements(int* A, int M, int* B, int N, int index, int* C) {
     }
 }
 
-int* removeElement(int* arr, int& size, int index) {
-    if (index < 0 || index >= size) {
-        cout << "Некоректний індекс для видалення!" << endl;
-        return arr;
+void remove_elements(int* A, int M, int index, int N, int* C) {
+    for (int i = 0; i < index; i++) {
+        C[i] = A[i];
     }
-
-    int* newArr = new int[size - 1];
-    for (int i = 0; i < index; ++i) {
-        newArr[i] = arr[i];
+    for (int i = index + N; i < M; i++) {
+        C[i - N] = A[i];
     }
-    for (int i = index + 1; i < size; ++i) {
-        newArr[i - 1] = arr[i];
-    }
-    --size;
-    delete[] arr;
-    return newArr;
 }
 
 
